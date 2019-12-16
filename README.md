@@ -18,7 +18,7 @@ The Devices tab includes the bulk of the improvements
 - Last Reboot column: Replaces timestamp with age (for example: 15 days 17 hours 8 minutes)
 - Reboot Required column: Red background if a reboot is pending
 
-![Extenstion Screenshot](docs/screenshot.png)
+![Extenstion Screenshot](/docs/screenshot.png)
 
 ## Installation
 
