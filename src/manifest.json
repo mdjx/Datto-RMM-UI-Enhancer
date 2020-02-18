@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Datto RMM UI Enhancer",
   "description": "Improves the Datto RMM (previously known as AEM) UI experience",
-  "version": "1.1",
+  "version": "1.2",
   "content_scripts": [{
     "matches": [ 
       "https://pinotage.centrastage.net/*",
