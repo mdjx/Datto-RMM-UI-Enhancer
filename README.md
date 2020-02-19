@@ -28,4 +28,4 @@ The extension can be installed from the [Chrome Web Store](https://chrome.google
 
 ### Manually
 
-Clone the repository and drag the `src` folder into the Chrome Extensions page. Developer mode will need to be enabled. 
+Clone the repository and drag the `src` folder into the Chrome Extensions page. Developer mode will need to be enabled. The downside of this method is that you won't automatically receive extension updates. 
