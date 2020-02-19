@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
   console.log("Datto RMM UI Enhancer Loaded");
 
   fixDeviceTables();
@@ -6,8 +6,8 @@ window.onload = function() {
   // sites dropdown
   document.getElementById("toptab_profiles").addEventListener(
     "mouseover",
-    function() {
-      setTimeout(function() {
+    function () {
+      setTimeout(function () {
         fixSitesDropdown();
       }, 700);
     },
@@ -29,7 +29,7 @@ function fixSitesDropdown() {
       site.innerText = site.title;
       site.href = site.href.replace("summary", "listDevices");
     });
-  } catch {}
+  } catch { }
 }
 
 function fixDeviceTables() {
@@ -54,7 +54,7 @@ function fixDeviceTables() {
             tableHeadings.indexOf("Reboot required")
           ].style.background = "rgba(252, 207, 207, 0.4)";
         }
-      } catch {}
+      } catch { }
     });
 
     // Highlights server hostnames on devices pages
@@ -70,7 +70,7 @@ function fixDeviceTables() {
             tableHeadings.indexOf("Device Hostname")
           ].style.background = "rgba(95, 185, 185, 0.10)";
         }
-      } catch {}
+      } catch { }
     });
 
     // Colour code audit age
@@ -108,7 +108,7 @@ function fixDeviceTables() {
             tableHeadings.indexOf("Last Audit Date")
           ].innerText = timeSinceLastAudit;
         }
-      } catch {}
+      } catch { }
     });
 
     // Change Last Reboot to Uptime value (days, hours, minutes) instead of timestamp
@@ -211,5 +211,26 @@ function fixDeviceTables() {
       // Set OS
       row.children[tableHeadings.indexOf("Operating System")].innerText = os;
     });
+
+    // Add QuickFilter functionality to search box
+    
+    const devices = Array.from(document.getElementsByClassName('devicerow'))
+    const searchInput = document.getElementById('qs');
+
+    function quickFilter() {
+      if (this.value.length > 2) {
+        devices.forEach(device => {
+          if (!device.innerText.toUpperCase().includes(this.value.toUpperCase())) {
+            device.style.display = "none"
+          } else { device.style.display = "" }
+        })
+      }
+      else {
+        devices.forEach(device => { device.style.display = "" })
+      }
+    }
+
+    searchInput.addEventListener('change', quickFilter);
+    searchInput.addEventListener('keyup', quickFilter);
   }
 }
