@@ -207,6 +207,10 @@ function fixDeviceTables() {
       os = os.replace("10.0.17763", "1809");
       os = os.replace("10.0.18362", "1903");
       os = os.replace("10.0.18363", "1909");
+      os = os.replace("10.0.19041", "2004");
+      os = os.replace("10.0.19042", "20H2");
+      os = os.replace("10.0.19043", "21H1");
+      os = os.replace("10.0.19044", "21H2");
 
       // Set OS
       row.children[tableHeadings.indexOf("Operating System")].innerText = os;
